@@ -1,9 +1,11 @@
 import Head from "next/head";
-import { PostWidget, PostCard, Categories } from "../components/";
+import { PostWidget, PostCard, Categories,Loading } from "../components/";
 import { getCategories, getPosts } from "@/Services";
 import { useState, useEffect } from "react";
 import PostsFilter from "@/components/PostsFilter";
 import Sidebar from "../components/Sidebar";
+import { useRouter } from "next/router";
+
 
 export const getStaticProps = async () => {
     try {
@@ -118,6 +120,10 @@ export default function Home({posts,categories}) {
     };
     const [selectedCategory, setSelectedCategory] = useState("All");
 
+    const router = useRouter();
+    if (router.isFallback){
+        return <Loading/>
+    }
     return (
         <>
             <Head>
