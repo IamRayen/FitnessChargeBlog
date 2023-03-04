@@ -4,6 +4,7 @@ import { generateCustomPlaceholderURL } from "react-placeholder-image";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 
 const PostDetail = ({ post }) => {
+    console.log(post);
     const authorPlaceholderImageURL = generateCustomPlaceholderURL(30, 30, {
         backgroundColor: "#E28413",
         textColor: "#ffffff",
@@ -34,22 +35,16 @@ const PostDetail = ({ post }) => {
                 {children}
             </blockquote>
         ),
-        p: ({ children }) => (
-            <p className="my-12 text-lg">{children}</p>
-        ),
+        p: ({ children }) => <p className="my-12 text-lg">{children}</p>,
         ul: ({ children }) => (
-            <ul className="list-disc list-inside my-8 text-lg">
-                {children}
-            </ul>
+            <ul className="list-disc list-inside my-8 text-lg">{children}</ul>
         ),
         ol: ({ children }) => (
             <ol className="list-decimal list-inside my-8 text-lg">
                 {children}
             </ol>
         ),
-        li: ({ children }) => (
-            <li className="my-8 text-lg">{children}</li>
-        ),
+        li: ({ children }) => <li className="my-8 text-lg">{children}</li>,
         code: ({ children }) => (
             <code className="bg-gray-100 dark:bg-gray-800 rounded-md p-2 text-sm">
                 {children}
@@ -60,9 +55,7 @@ const PostDetail = ({ post }) => {
                 {children}
             </pre>
         ),
-        br:()=>(
-            <br/>
-        )
+        br: () => <br />,
     };
 
     return (
@@ -83,8 +76,7 @@ const PostDetail = ({ post }) => {
                     <div className="flex items-center justify-center lg:mb-0 w-auto mr-8">
                         <img
                             src={
-                                post.author.photo
-                                    ? post.author.photo.url
+                             post.author.photo? post.author.photo.url
                                     : authorPlaceholderImageURL
                             }
                             alt={post.author.name}

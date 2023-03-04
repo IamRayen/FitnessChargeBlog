@@ -6,8 +6,7 @@ import PostsFilter from "@/components/PostsFilter";
 import Sidebar from "../components/Sidebar";
 import { useRouter } from "next/router";
 
-
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
     try {
         const Data = await getPosts();
         const Data2 = await getCategories();
@@ -21,6 +20,7 @@ export const getStaticProps = async () => {
 
 //don't forget to add props :{posts,categories} when you use getStaticProps
 export default function Home({posts,categories}) {
+
     // const [posts, setPosts] = useState([
     //     {
     //         node: {

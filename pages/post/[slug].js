@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { getPostDetails,getPaths } from "../../Services";
 import {
     PostDetail,
@@ -11,7 +12,7 @@ import {
 import { useRouter } from "next/router";
 
 
-export const getStaticProps = async ({params}) => {
+export const getServerSideProps = async ({params}) => {
         try {
             const Data = await getPostDetails(params.slug);
             return {
@@ -22,20 +23,20 @@ export const getStaticProps = async ({params}) => {
         }
     };
 
-export const getStaticPaths = async()=>{
-    try {
-        const Data = await getPaths()
-        const paths = Data.map(path=>{
-            return {params:{slug:path.slug}} 
-        })
-        return { 
-            paths,
-            fallback:true
-        }
-    } catch (error) {
-        console.log(error.message);
-    }
-}
+// export const getStaticPaths = async()=>{
+//     try {
+//         const Data = await getPaths()
+//         const paths = Data.map(path=>{
+//             return {params:{slug:path.slug}} 
+//         })
+//         return { 
+//             paths,
+//             fallback:true
+//         }
+//     } catch (error) {
+//         console.log(error.message);
+//     }
+// }
 
 
 const post = ({post}) => {
@@ -43,6 +44,9 @@ const post = ({post}) => {
     if (router.isFallback){
         return <Loading/>
     }
+
+    
+
     return (
         <div className="container mx-auto px-10 mb-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">

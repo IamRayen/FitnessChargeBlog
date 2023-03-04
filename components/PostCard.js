@@ -15,13 +15,16 @@ const PostCard = ({ post }) => {
         text: "",
     });
 
-
     return (
         <div className="container bg-gray-200 h-fit pb-6 p-2 rounded">
             <div className="relative overflow-hidden pb-56 mb-6">
                 {" "}
                 <img
-                    src={post.featuredImage? post.featuredImage.url : postPlaceholderImageURL}
+                    src={
+                        post.featuredImage
+                            ? post.featuredImage.url
+                            : postPlaceholderImageURL
+                    }
                     alt={post.title}
                     className="object-top absolute h-60 p-2 w-full object-cover shadow-lg rounded-xl"
                 />
@@ -37,13 +40,13 @@ const PostCard = ({ post }) => {
                                 ? post.author.photo.url
                                 : authorPlaceholderImageURL
                         }
-                        alt={post.author.name}
+                        alt={post.author ? post.author.name : "Author"}
                         height="30px"
                         width="30px"
                         className="align-middle rounded-full mr-1"
                     />
                     <p className="inline align-middle text-gray-800 ml-2 text-md">
-                        {post.author.name}
+                        {post.author ? post.author.name : "Author"}
                     </p>
                 </div>
                 <div className="font-medium text-gray-800">
