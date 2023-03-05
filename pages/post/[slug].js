@@ -11,31 +11,31 @@ import {
 } from "../../components";
 import { useRouter } from "next/router";
 
-// export const getServerSideProps = async ({ params }) => {
-//     try {
-//         const Data = await getPostDetails(params.slug);
-//         return {
-//             props: { post: Data },
-//         };
-//     } catch (error) {
-//         console.log(error.message);
-//     }
-// };
-
-export const getStaticPaths = async()=>{
+export const getServerSideProps = async ({ params }) => {
     try {
-        const Data = await getPaths()
-        const paths = Data.map(path=>{
-            return {params:{slug:path.slug}}
-        })
+        const Data = await getPostDetails(params.slug);
         return {
-            paths,
-            fallback:true
-        }
+            props: { post: Data },
+        };
     } catch (error) {
         console.log(error.message);
     }
-}
+};
+
+// export const getStaticPaths = async()=>{
+//     try {
+//         const Data = await getPaths()
+//         const paths = Data.map(path=>{
+//             return {params:{slug:path.slug}}
+//         })
+//         return {
+//             paths,
+//             fallback:true
+//         }
+//     } catch (error) {
+//         console.log(error.message);
+//     }
+// }
 
 const post = ({post}) => {
     const router = useRouter();
