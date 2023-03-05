@@ -4,7 +4,6 @@ import { generateCustomPlaceholderURL } from "react-placeholder-image";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 
 const PostDetail = ({ post }) => {
-    console.log(post);
     const authorPlaceholderImageURL = generateCustomPlaceholderURL(30, 30, {
         backgroundColor: "#E28413",
         textColor: "#ffffff",
@@ -17,50 +16,49 @@ const PostDetail = ({ post }) => {
     });
     const renderers = {
         h1: ({ children }) => (
-            <h1 className="mb-8 text-4xl text-gray-900 md:text-5xl lg:text-6xl ">
+            <h1 className="my-8 lg:my-16 text-4xl text-base sm:text-4xl md:text-5xl lg:text-6xl ">
                 {children}
             </h1>
         ),
         h2: ({ children }) => (
-            <h2 className="mb-8 text-3xl text-gray-900 md:text-5xl lg:text-6xl">
+            <h2 className="my-8 lg:my-16 text-3xl text-base sm:text-3xl md:text-4xl lg:text-5xl">
                 {children}
             </h2>
         ),
-        h3: ({ children }) => <h3 className=" mb-8 text-3xl">{children}</h3>,
-        h4: ({ children }) => <h4 className=" mb-4 text-2xl">{children}</h4>,
-        h5: ({ children }) => <h5 className="mb-4 text-xl">{children}</h5>,
-        h6: ({ children }) => <h6 className="mb-4 text-large">{children}</h6>,
+        h3: ({ children }) => <h3 className=" my-8 lg:my-16 text-base sm:text-2xl md:text-3xl lg:text-4xl">{children}</h3>,
+        h4: ({ children }) => <h4 className=" my-8 lg:my-16 text-base sm:text-lg md:text-xl lg:text-2xl">{children}</h4>,
+        h5: ({ children }) => <h5 className="my-8 lg:my-16 text-base md:text-lg lg:text-xl">{children}</h5>,
+        h6: ({ children }) => <h6 className="my-8 lg:my-16 text-lg">{children}</h6>,
         blockquote: ({ children }) => (
-            <blockquote className="mb-4 border-l-4 pl-2 text-lg">
-                {children}
+            <blockquote className="my-8 lg:my-16 border-l-4 pl-2 text-lg">
+               "{children}"
             </blockquote>
         ),
-        p: ({ children }) => <p className="my-12 text-lg">{children}</p>,
+        p: ({ children }) => <p className="my-4 lg:my-8 text-base tracking-wide lg:text-lg">{children}</p>,
         ul: ({ children }) => (
-            <ul className="list-disc list-inside my-8 text-lg">{children}</ul>
+            <ul className="list-disc list-inside my-4 lg:my-8">{children}</ul>
         ),
         ol: ({ children }) => (
-            <ol className="list-decimal list-inside my-8 text-lg">
+            <ol className="list-decimal list-inside my-4 lg:my-8 indent-4">
                 {children}
             </ol>
         ),
-        li: ({ children }) => <li className="my-8 text-lg">{children}</li>,
+        li: ({ children }) => <li className="my-4 lg:my-8 text-base lg:text-lg">{children}</li>,
         code: ({ children }) => (
-            <code className="bg-gray-100 dark:bg-gray-800 rounded-md p-2 text-sm">
+            <code className="bg-gray-100 dark:bg-gray-800 rounded-md p-2 text-base my-4 lg:my-8">
                 {children}
             </code>
         ),
         code_block: ({ children }) => (
-            <pre className="bg-gray-100 dark:bg-gray-800 overflow-y-scroll rounded-md p-2 text-sm">
+            <pre className="bg-gray-100 dark:bg-gray-800 overflow-y-scroll rounded-md p-2 text-base my-4 lg:my-8">
                 {children}
             </pre>
         ),
-        br: () => <br />,
     };
 
     return (
-        <div className="bg-white rounded-lg  mb-8">
-            <div className="relative overflow-hidden shadow-md mb-6">
+        <div className="bg-white rounded-lg my-4 lg:my-8">
+            <div className="relative overflow-hidden shadow-md my-4 lg:my-8">
                 <img
                     src={
                         post.featuredImage
@@ -71,12 +69,13 @@ const PostDetail = ({ post }) => {
                     className="object-top h-full w-full rounded-t-lg"
                 />
             </div>
-            <div className="px-12 py-8">
-                <div className="flex items-center justify-center mb-8 w-full">
+            <div className="px-4 md:px-8 lg:px-16 my-4 lg:my-8">
+                <div className="flex items-center justify-center w-full my-4 lg:my-8">
                     <div className="flex items-center justify-center lg:mb-0 w-auto mr-8">
                         <img
                             src={
-                             post.author.photo? post.author.photo.url
+                                post.author.photo
+                                    ? post.author.photo.url
                                     : authorPlaceholderImageURL
                             }
                             alt={post.author.name}
@@ -108,8 +107,8 @@ const PostDetail = ({ post }) => {
                         </span>
                     </div>
                 </div>
-                <h1 className="text-3xl font-semibold">{post.title}</h1>
-                <h3 className="text-xl semi-bold my-20">{post.excerpt}</h3>
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold my-8 lg:my-16">{post.title}</h1>
+                <h3 className="text-lg lg:text-xl semi-bold my-8 lg:my-16">{post.excerpt}</h3>
                 <RichText
                     content={post.content.raw.children}
                     renderers={renderers}

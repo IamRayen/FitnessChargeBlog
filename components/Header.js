@@ -34,7 +34,7 @@ const Header = () => {
             <nav className="container flex justify-between items-center py-6 lg:py-12  border-b border-orange">
                 <Link href="/">
                     <span className="cursor-pointer font-bold text-4xl text-white">
-                        Fitness<span className="font-normal">Charge</span>
+                        Fitness<span className="font-normal">toHaleness</span>
                     </span>
                 </Link>
 
