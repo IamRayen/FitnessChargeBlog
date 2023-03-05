@@ -31,7 +31,7 @@ const Sidebar = ({slug,categories}) => {
                         Author
                     </h3>
                 </div>
-                <p className="text-white text-lg">
+                <p className="text-white text-base sm:text-lg">
                     Hey, i am Rayen, a foreign student in Germany.
                    
                     I'm passionate about Fitness and I want to achieve my
