@@ -13,10 +13,10 @@ const Sidebar = ({slug,categories}) => {
 });
 
     return (
-        <div className="border-b-2 border-orange">
+        <div className="border-b-2 sm:px-8 md:px-24 lg:px-0 border-orange">
             <PostWidget slug={slug} categories={categories} />
             <Categories />
-            <div className="containter flex flex-col mb-8 p-12 relative rounded-lg bg-lightviolet bg-opacity-40">
+            <div className="flex flex-col mb-8 p-4 lg:p-8 relative rounded-lg bg-lightviolet bg-opacity-40">
                 <div className="flex flex-wrap justify-around items-center mb-4 ">
                     {" "}
                     {/* <Image
