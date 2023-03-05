@@ -11,16 +11,16 @@ import {
 } from "../../components";
 import { useRouter } from "next/router";
 
-export const getServerSideProps = async ({ params }) => {
-    try {
-        const Data = await getPostDetails(params.slug);
-        return {
-            props: { post: Data },
-        };
-    } catch (error) {
-        console.log(error.message);
-    }
-};
+// export const getServerSideProps = async ({ params }) => {
+//     try {
+//         const Data = await getPostDetails(params.slug);
+//         return {
+//             props: { post: Data },
+//         };
+//     } catch (error) {
+//         console.log(error.message);
+//     }
+// };
 
 export const getStaticPaths = async()=>{
     try {
