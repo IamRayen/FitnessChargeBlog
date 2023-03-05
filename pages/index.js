@@ -129,6 +129,7 @@ export default function Home({posts,categories}) {
             <Head>
                 <title>Fitness to Haleness | Home</title>
                 <link rel="icon" href="/Fitness to haleness.png" />
+                <meta name="google-site-verification" content="zttkW-5u1UWFmEXqVD2VgM-MpTEDmSLfOWqZ9mAvJew" />
             </Head>
             <PostsFilter
                 categories={categories}
