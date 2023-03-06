@@ -16,19 +16,19 @@ const PostDetail = ({ post }) => {
     });
     const renderers = {
         h1: ({ children }) => (
-            <h1 className="my-8 lg:my-16 text-4xl text-base sm:text-4xl md:text-5xl lg:text-6xl ">
+            <h1 className="my-8 lg:my-16 text-4xl  text-4xl md:text-5xl lg:text-6xl ">
                 {children}
             </h1>
         ),
         h2: ({ children }) => (
-            <h2 className="my-8 lg:my-16 text-3xl text-base sm:text-3xl md:text-4xl lg:text-5xl">
+            <h2 className="my-8 lg:my-16 text-3xl text-base text-3xl md:text-4xl lg:text-5xl">
                 {children}
             </h2>
         ),
-        h3: ({ children }) => <h3 className=" my-8 lg:my-16 text-base sm:text-2xl md:text-3xl lg:text-4xl">{children}</h3>,
-        h4: ({ children }) => <h4 className=" my-8 lg:my-16 text-base sm:text-lg md:text-xl lg:text-2xl">{children}</h4>,
-        h5: ({ children }) => <h5 className="my-8 lg:my-16 text-base md:text-lg lg:text-xl">{children}</h5>,
-        h6: ({ children }) => <h6 className="my-8 lg:my-16 text-lg">{children}</h6>,
+        h3: ({ children }) => <h3 className=" my-8 lg:my-16 text-2xl md:text-3xl lg:text-4xl">{children}</h3>,
+        h4: ({ children }) => <h4 className=" my-8 lg:my-16 text-xl md:text-2xl lg:text-3xl">{children}</h4>,
+        h5: ({ children }) => <h5 className="my-8 lg:my-16 text-lg md:text-xl lg:text-2xl">{children}</h5>,
+        h6: ({ children }) => <h6 className="my-8 lg:my-16 text-base md:text-lg lg:text-xl">{children}</h6>,
         blockquote: ({ children }) => (
             <blockquote className="my-8 lg:my-16 border-l-4 pl-2 text-lg">
                "{children}"
