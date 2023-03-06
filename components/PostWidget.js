@@ -42,7 +42,7 @@ const PostWidget = ({ categories, slug }) => {
         }
     }, []);
     return (
-        <div className="bg-white relative shadow-lg rounded-lg p-8 mb-8">
+        <div className="bg-white relative shadow-lg rounded p-8 mb-8">
             <h3 className="text-xl mb-8 font-semi-bold border-b pb-4">
                 {slug ? "Similar Posts:" : "Featured Posts:"}
             </h3>

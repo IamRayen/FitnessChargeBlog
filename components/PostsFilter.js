@@ -13,7 +13,7 @@ const PostsFilter = ({
                 <div className="text-xl  font-semibold text-white">
                     Filter by <span className="text-orange">Categories</span>:{" "}
                 </div>
-                <div className="flex  gap-3 flex-wrap">
+                <div className="flex gap-2  lg:gap-4 flex-wrap">
                     <button
                         key="All"
                         onClick={() => {
@@ -23,7 +23,7 @@ const PostsFilter = ({
                             selectedCategory == "All"
                                 ? "bg-orange scale-110"
                                 : "bg-lightviolet "
-                        }  ease-in-out duration-200 text-lg px-4 font-semibold text-white cursor-pointer rounded-full p-2  `}
+                        }  ease-in-out duration-200 text-lg px-4 font-semibold text-white cursor-pointer rounded-xl py-2  `}
                     >
                         All
                     </button>
@@ -37,7 +37,7 @@ const PostsFilter = ({
                                 selectedCategory == category.name
                                     ? "bg-orange scale-110"
                                     : "bg-lightviolet "
-                            }  ease-in-out duration-200 text-lg px-4 font-semibold text-white cursor-pointer rounded-full p-2  `}
+                            }  ease-in-out duration-200 text-lg px-4 font-semibold text-white cursor-pointer rounded-xl py-2  `}
                         >
                             {category.name}
                         </button>

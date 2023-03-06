@@ -15,7 +15,7 @@ const About = ({ author }) => {
                 {" "}
                 <title>Fitness to Haleness | About</title>
             </Head>
-            <div className="containter flex flex-col mt-20 mb-8 py-20 px-12 relative rounded-lg bg-lightviolet bg-opacity-40">
+            <div className="containter flex flex-col lg:mt-16 p-8 lg:p-16 relative rounded bg-lightviolet bg-opacity-40">
                 {/* <div className="flex flex-wrap justify-around items-center mb-8 md:px-20 ">
                 {" "}
                 <Image
@@ -29,8 +29,11 @@ const About = ({ author }) => {
                 
             </div> */}
                 <p className="text-white text-lg md:px-20">
-                    Hey, i am <span className="font-bold">Rayen</span>, a
-                    foreign student in Germany.
+                    <span className="block text-xl lg:text-2xl font-semibold">Welcome to my blog FitnesstoHaleness!</span>
+                    <br />
+                     Hey, I am{" "}
+                    <span className="font-bold">Rayen</span>, a foreign student
+                    in Germany.
                     <br />
                     <br />
                     I'm passionate about Fitness and I want to achieve my
@@ -41,6 +44,13 @@ const About = ({ author }) => {
                     <br />
                     I'm constantly learning and growing, and I enjoy sharing the
                     knowledge that I acquire along the way with others.
+                    <br />
+                    <br />
+                    In this blog, I will be collecting and sharing useful
+                    information on various subjects within the field, while
+                    highlighting the most important details. My goal is to
+                    provide you with valuable insights and practical advice that
+                    can help you achieve your health and fitness goals.
                     <br />
                     In addition to this blog, I'm very interested in
                     Web-development and entrepreneurship. In fact, I built this
