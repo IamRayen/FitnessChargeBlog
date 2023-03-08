@@ -32,12 +32,12 @@ const Categories = () => {
 
     return (
         <div className="bg-white shadow-lg rounded p-8 mb-8">
-            <h3 className="text-xl mb-8 font-semi-bold border-b pb-4">
+            <h3 className="text-2xl mb-8 font-semi-bold border-b border-orange pb-4">
                 Categories
             </h3>
             {categories.map((el) => (
                 <Link key={el.slug} href={`/category/${el.slug}`}>
-                    <span className="cursor-pointer block pb-3 mb-3">
+                    <span className="cursor-pointer hover:scale-110 hover:translate-x-4 duration-100 text-lg block pb-3 mb-3">
                         {el.name}
                     </span>
                 </Link>

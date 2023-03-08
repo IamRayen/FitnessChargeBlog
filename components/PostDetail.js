@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import moment from "moment";
 import { generateCustomPlaceholderURL } from "react-placeholder-image";
 import { RichText } from "@graphcms/rich-text-react-renderer";
@@ -25,16 +26,36 @@ const PostDetail = ({ post }) => {
                 {children}
             </h2>
         ),
-        h3: ({ children }) => <h3 className=" my-8 lg:my-16 text-2xl md:text-3xl lg:text-4xl">{children}</h3>,
-        h4: ({ children }) => <h4 className=" my-8 lg:my-16 text-xl md:text-2xl lg:text-3xl">{children}</h4>,
-        h5: ({ children }) => <h5 className="my-8 lg:my-16 text-lg md:text-xl lg:text-2xl">{children}</h5>,
-        h6: ({ children }) => <h6 className="my-8 lg:my-16 text-base md:text-lg lg:text-xl">{children}</h6>,
+        h3: ({ children }) => (
+            <h3 className=" my-8 lg:my-16 text-2xl md:text-3xl lg:text-4xl">
+                {children}
+            </h3>
+        ),
+        h4: ({ children }) => (
+            <h4 className=" my-8 lg:my-16 text-xl md:text-2xl lg:text-3xl">
+                {children}
+            </h4>
+        ),
+        h5: ({ children }) => (
+            <h5 className="my-8 lg:my-16 text-lg md:text-xl lg:text-2xl">
+                {children}
+            </h5>
+        ),
+        h6: ({ children }) => (
+            <h6 className="my-8 lg:my-16 text-base md:text-lg lg:text-xl">
+                {children}
+            </h6>
+        ),
         blockquote: ({ children }) => (
             <blockquote className="my-8 lg:my-16 border-l-4 pl-2 text-lg">
-               "{children}"
+                {children}
             </blockquote>
         ),
-        p: ({ children }) => <p className="my-4 lg:my-8 text-base tracking-wide lg:text-lg">{children}</p>,
+        p: ({ children }) => (
+            <p className="my-4 lg:my-8 text-base tracking-wide lg:text-lg">
+                {children}
+            </p>
+        ),
         ul: ({ children }) => (
             <ul className="list-disc list-inside my-4 lg:my-8">{children}</ul>
         ),
@@ -43,7 +64,9 @@ const PostDetail = ({ post }) => {
                 {children}
             </ol>
         ),
-        li: ({ children }) => <li className="my-4 lg:my-8 text-base lg:text-lg">{children}</li>,
+        li: ({ children }) => (
+            <li className="my-4 lg:my-8 text-base lg:text-lg">{children}</li>
+        ),
         code: ({ children }) => (
             <code className="bg-gray-100 dark:bg-gray-800 rounded-md p-2 text-base my-4 lg:my-8">
                 {children}
@@ -53,6 +76,36 @@ const PostDetail = ({ post }) => {
             <pre className="bg-gray-100 dark:bg-gray-800 overflow-y-scroll rounded-md p-2 text-base my-4 lg:my-8">
                 {children}
             </pre>
+        ),
+        img: ({ children }) => (
+            <img
+                alt={children.props.parent.alt}
+                src={children.props.parent.src}
+                className="my-2 w-auto mx-auto my-8 h-80 rounded-lg"
+            />
+        ),
+        a: ({ children }) => (
+            <Link
+                target="_blank"
+                className="bg-orange text-white font-semibold flex mx-auto w-fit py-2 px-4 my-8 scale-100 hover:scale-110 rounded-full shadow-none transition duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30"
+                href={children.props.parent.href}
+            >
+                {children}
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6 ml-1"
+                >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                    />
+                </svg>
+            </Link>
         ),
     };
 
@@ -107,8 +160,12 @@ const PostDetail = ({ post }) => {
                         </span>
                     </div>
                 </div>
-                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold my-8 lg:my-16">{post.title}</h1>
-                <h3 className="text-lg lg:text-xl semi-bold my-8 lg:my-16">{post.excerpt}</h3>
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold my-8 lg:my-16">
+                    {post.title}
+                </h1>
+                <h3 className="text-lg lg:text-xl semi-bold my-8 lg:my-16">
+                    {post.excerpt}
+                </h3>
                 <RichText
                     content={post.content.raw.children}
                     renderers={renderers}
