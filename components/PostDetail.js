@@ -119,7 +119,7 @@ const PostDetail = ({ post }) => {
                             : postPlaceholderImageURL
                     }
                     alt={post.title}
-                    className="object-top h-full w-full rounded-t-lg"
+                    className="object-cover object-center object-contain max-h-96 w-full rounded-t-lg"
                 />
             </div>
             <div className="px-4 md:px-4 xl:px-8 my-4 lg:my-8">
