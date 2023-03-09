@@ -87,7 +87,7 @@ const PostDetail = ({ post }) => {
         a: ({ children }) => (
             <Link
                 target="_blank"
-                className="bg-orange text-white font-semibold flex mx-auto w-fit py-2 px-4 my-8 scale-100 hover:scale-110 rounded-full shadow-none transition duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30"
+                className="bg-orange text-white font-semibold flex items-center mx-auto w-fit py-2 px-8 my-8 scale-90 hover:scale-100 rounded-full shadow-none transition duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30"
                 href={children.props.parent.href}
             >
                 {children}
@@ -97,7 +97,7 @@ const PostDetail = ({ post }) => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-6 h-6 ml-1"
+                    className="w-8 h-8 ml-4"
                 >
                     <path
                         strokeLinecap="round"
