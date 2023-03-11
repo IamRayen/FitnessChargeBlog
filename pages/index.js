@@ -183,7 +183,7 @@ export default function Home({posts,categories}) {
                                   />
                               ))}
                 </div>
-                <div className="lg:col-span-4 col-span-1 xl:p-4  h-fit">
+                <div className="lg:col-span-4 col-span-1 lg:px-4 xl:px-8 h-fit">
                     <Sidebar />
                 </div>
             </div>
