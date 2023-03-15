@@ -139,7 +139,7 @@ export default function Home({posts,categories}) {
                 handleSearchTermChange={handleSearchTermChange}
             />
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-4 lg:divide-none">
-                <div className="grid grid-cols-1 gap-4 xl:gap-16 lg:grid-cols-1 xl:grid-cols-2 lg:col-span-8 col-span-1 border-b-2 pb-4 border-orange h-fit mx-auto lg:mx-4">
+                <div className="grid grid-cols-1 gap-4 xl:gap-8 lg:grid-cols-1 xl:grid-cols-2 lg:col-span-8 col-span-1 border-b-2 pb-4 border-orange h-fit mx-auto lg:mx-4">
                     {selectedCategory === "All"
                         ? posts
                               .filter(

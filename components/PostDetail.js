@@ -17,12 +17,12 @@ const PostDetail = ({ post }) => {
     });
     const renderers = {
         h1: ({ children }) => (
-            <h1 className="my-8 lg:my-16 text-4xl  text-4xl md:text-5xl lg:text-6xl ">
+            <h1 className="my-8 lg:my-16 text-4xl md:text-5xl lg:text-6xl ">
                 {children}
             </h1>
         ),
         h2: ({ children }) => (
-            <h2 className="my-8 lg:my-16 text-3xl text-base text-3xl md:text-4xl lg:text-5xl">
+            <h2 className="my-8 lg:my-16 text-3xl md:text-4xl lg:text-5xl">
                 {children}
             </h2>
         ),

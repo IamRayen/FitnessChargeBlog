@@ -3,7 +3,7 @@ import { generateCustomPlaceholderURL } from "react-placeholder-image";
 import Image from "next/image";
 import Link from "next/link";
 import PostWidget from "./PostWidget";
-import Categories from "./Categories";
+// import Categories from "./Categories";
 
 const Sidebar = ({ slug, categories }) => {
     const authorPlaceholderImageURL = generateCustomPlaceholderURL(30, 30, {
@@ -15,7 +15,7 @@ const Sidebar = ({ slug, categories }) => {
     return (
         <div className="border-b-2 sm:px-8 md:px-24 lg:px-0 border-orange">
             <PostWidget slug={slug} categories={categories} />
-            <Categories />
+            {/* <Categories /> */}
             <div className="mb-8 p-4 lg:p-8 bg-orange bg-opacity-90 rounded">
                 <span className="text-lg lg:text-2xl mb-2 lg:mb-4 block font-semibold">Disclosure</span> 
                 Some of the links on this website are affiliate
