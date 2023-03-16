@@ -32,7 +32,7 @@ const About = ({ author }) => {
                     <span className="block text-xl lg:text-2xl font-semibold">Welcome to my blog FitnesstoHaleness!</span>
                     <br />
                      Hey, I am{" "}
-                    <span className="font-bold">Rayen</span>, a foreign student
+                    <span className="font-bold">The Author</span>, a foreign student
                     in Germany.
                     <br />
                     <br />
