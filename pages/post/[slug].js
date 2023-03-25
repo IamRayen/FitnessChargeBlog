@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import { useEffect } from "react";
 import { getPostDetails, getPaths } from "../../Services";
 import {
@@ -727,6 +728,10 @@ const post = ({post}) => {
 
     return (
         <div className="container mx-auto xl:px-16 mb-8">
+            <Head>
+                <title>{post.title}</title>
+                <meta name="description" content={post.excerpt} />
+            </Head>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
                 <div className="col-span-1 lg:col-span-8 ">
                     <PostDetail post={post} />
