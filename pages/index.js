@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { PostWidget, PostCard, Categories,Loading } from "../components/";
+import { PostWidget, PostCard, Categories, Loading } from "../components/";
 import { getCategories, getPosts } from "@/Services";
 import { useState, useEffect } from "react";
 import PostsFilter from "@/components/PostsFilter";
@@ -11,7 +11,7 @@ export const getServerSideProps = async () => {
         const Data = await getPosts();
         const Data2 = await getCategories();
         return {
-            props: { posts: Data,categories:Data2 },
+            props: { posts: Data, categories: Data2 },
         };
     } catch (error) {
         console.log(error.message);
@@ -19,8 +19,7 @@ export const getServerSideProps = async () => {
 };
 
 //don't forget to add props :{posts,categories} when you use getStaticProps
-export default function Home({posts,categories}) {
-
+export default function Home({ posts, categories }) {
     // const [posts, setPosts] = useState([
     //     {
     //         node: {
@@ -121,15 +120,22 @@ export default function Home({posts,categories}) {
     const [selectedCategory, setSelectedCategory] = useState("All");
 
     const router = useRouter();
-    if (router.isFallback){
-        return <Loading/>
+    if (router.isFallback) {
+        return <Loading />;
     }
     return (
         <>
             <Head>
                 <title>Fitness to Haleness | Home</title>
                 <link rel="icon" href="/Fitness to haleness.png" />
-                <meta name="google-site-verification" content="zttkW-5u1UWFmEXqVD2VgM-MpTEDmSLfOWqZ9mAvJew" />
+                <meta
+                    name="google-site-verification"
+                    content="zttkW-5u1UWFmEXqVD2VgM-MpTEDmSLfOWqZ9mAvJew"
+                />
+                <meta
+                    name="description"
+                    content="Get the latest insights and information on fitness and wellness with our informative blog. We cover a wide range of topics, from nutrition and workouts to mental health and motivation. Whether you're a seasoned fitness enthusiast or just starting your journey, our blog has something for everyone. Stay informed and inspired with our comprehensive guide to fitness and wellness."
+                />
             </Head>
             <PostsFilter
                 categories={categories}
