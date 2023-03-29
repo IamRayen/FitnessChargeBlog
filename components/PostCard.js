@@ -32,8 +32,8 @@ const PostCard = ({ post }) => {
             <h1 className="transition duration-700 text-center mb-6 cursor-pointer text-lightviolet hover:text-violet text-3xl font-semibold">
                 <Link href={`/post/${post.slug}`}>{post.title}</Link>
             </h1>
-            <div className="block lg:flex text-center items-center justify-center mb-6 w-full ">
-                <div className="flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8">
+            <div className="block  lg:flex text-center items-center justify-center mb-6 w-full">
+                {/* <div className="flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8">
                     <img
                         src={
                             post.author.photo
@@ -48,7 +48,7 @@ const PostCard = ({ post }) => {
                     <p className="inline align-middle text-gray-800 ml-2 text-md">
                         {post.author ? post.author.name : "Author"}
                     </p>
-                </div>
+                </div> */}
                 <div className="font-medium text-gray-800">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
