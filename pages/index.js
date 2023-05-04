@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { PostWidget, PostCard, Categories, Loading } from "../components/";
+import { PostWidget, PostCard, Loading } from "../components/";
 import { getCategories, getPosts } from "@/Services";
 import { useState, useEffect } from "react";
 import PostsFilter from "@/components/PostsFilter";
